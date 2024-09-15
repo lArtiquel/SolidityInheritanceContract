@@ -1,2 +1,5 @@
 # SolidityInheritanceContract
 Inheritance Contract written in Solidity
+
+Deploying contracts with the account: 0x62E52D55A6CD7dbd7Be8A9D855b3B78E198667DA
+Contract deployed to address: 0xe79D6DfaA889a2a307393e39fff9d1b56Da65c72
