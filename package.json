@@ -2,24 +2,27 @@
   "name": "solidityinheritancecontract",
   "version": "1.0.0",
   "description": "Inheritance Contract written in Solidity",
-  "main": "truffle-config.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "npx hardhat compile",
+    "test": "npx hardhat test",
+    "deploy": "npx hardhat run scripts/deploy.ts --network sepolia"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@nomiclabs/hardhat-ethers": "^2.2.3",
-    "@nomiclabs/hardhat-etherscan": "^3.1.8",
-    "@types/mocha": "^10.0.8",
-    "@types/node": "^22.5.5",
-    "ethers": "^5.7.2",
-    "hardhat": "^2.22.10",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.6.2"
+    "@nomicfoundation/hardhat-ethers": "^3.0.5",
+    "@nomicfoundation/hardhat-ignition-ethers": "^0.15.5",
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.10",
+    "@typechain/ethers-v6": "^0.5.1",
+    "@typechain/hardhat": "^9.1.0",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.2",
+    "hardhat": "^2.19.4",
+    "typechain": "^8.3.2"
   }
 }

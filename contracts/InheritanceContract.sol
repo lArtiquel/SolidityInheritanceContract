@@ -33,4 +33,8 @@ contract InheritanceContract {
         owner = heir;
         heir = address(0);
     }
+
+    // Add this receive function to accept ETH transfers
+    receive() external payable {}
+    
 }

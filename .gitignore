@@ -3,3 +3,5 @@ package-lock.json
 /artifacts
 /node_modules
 /cache
+/dist
+/typechain-types

@@ -7,7 +7,7 @@ async function main() {
   const InheritanceContract = await ethers.getContractFactory("InheritanceContract");
   const contract = await InheritanceContract.deploy();
 
-  console.log(`Contract deployed to address: ${contract.address}`);
+  console.log(`Contract deployed to address: ${await contract.getAddress()}`);
 }
 
 main()
