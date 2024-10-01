@@ -1,5 +1,4 @@
 // SPDX-License-Identifier: MIT
-
 pragma solidity ^0.8.21;
 
 contract InheritanceContract {
@@ -18,9 +17,9 @@ contract InheritanceContract {
     }
 
     function withdraw(uint256 amount) public onlyOwner {
-        require(amount <= address(this).balance, "Insufficient funds");
+        // The transfer function will handle the balance check
         payable(msg.sender).transfer(amount);
-        lastWithdrawalTimestamp = block.timestamp;
+        lastWithdrawalTimestamp = block.timestamp; // Reset the timestamp on withdrawal
     }
 
     function designateHeir(address newHeir) public onlyOwner {
@@ -30,11 +29,13 @@ contract InheritanceContract {
     function claimInheritance() public {
         require(block.timestamp - lastWithdrawalTimestamp >= 30 days, "One month has not passed since the last withdrawal");
         require(msg.sender == heir, "Only the heir can claim inheritance");
+
+        // Transfer ownership and reset the withdrawal timestamp
         owner = heir;
         heir = address(0);
+        lastWithdrawalTimestamp = block.timestamp; // Reset timestamp after inheritance is claimed
     }
 
-    // Add this receive function to accept ETH transfers
+    // Function to accept ETH transfers
     receive() external payable {}
-    
 }
